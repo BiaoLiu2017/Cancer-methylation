@@ -18,38 +18,13 @@ Y_test = Y_test_org.reshape(1,2158)
 
 #create placeholders
 def create_placeholders(n_x, n_y):
-    """
-    Creates the placeholders for the tensorflow session.
-    Arguments:
-    n_x -- scalar, length of every sample
-    n_y -- scalar, number of classes,1
-    
-    Returns:
-    X -- placeholder for the data input, of shape [n_x, None] and dtype "float"
-    Y -- placeholder for the input labels, of shape [n_y, None] and dtype "float"
-    
-    Tips:
-    - You will use None because it let's us be flexible on the number of examples you will for the placeholders.
-      In fact, the number of examples during test/train is different.
-    """
+
     X = tf.placeholder(tf.float32, shape = (n_x, None), name = "X")
     Y = tf.placeholder(tf.float32, shape = (n_y, None), name = "Y")
     return X, Y
 
 #initialize parameters
 def initialize_parameters():
-    """
-    Initializes parameters to build a neural network with tensorflow. The shapes are:
-                        W1 : [100, 22547]
-                        b1 : [100, 1]
-                        W2 : [100, 100]
-                        b2 : [100, 1]
-                        W3 : [1, 100]
-                        b3 : [1, 1]
-    
-    Returns:
-    parameters -- a dictionary of tensors containing W1, b1, W2, b2, W3, b3
-    """
     #tf.set_random_seed(1)
     W1 = tf.get_variable("W1", [100, 12], initializer = tf.contrib.layers.xavier_initializer())
     b1 = tf.get_variable("b1", [100, 1], initializer = tf.zeros_initializer())
@@ -69,16 +44,7 @@ def initialize_parameters():
 
 #forward propagation
 def forward_propagation(X, parameters):
-    """
-    Implements the forward propagation for the model: LINEAR -> RELU -> LINEAR -> RELU -> LINEAR -> Sigmoid
-    Arguments:
-    X -- input dataset placeholder, of shape (input size, number of examples)
-    parameters -- python dictionary containing your parameters "W1", "b1", "W2", "b2", "W3", "b3"
-                  the shapes are given in initialize_parameters
 
-    Returns:
-    Z3 -- the output of the last LINEAR unit
-    """
     # Retrieve the parameters from the dictionary "parameters" 
     W1 = parameters['W1']
     b1 = parameters['b1']
@@ -97,12 +63,6 @@ def forward_propagation(X, parameters):
 
 #compute_cost
 def compute_cost(Z3, Y):
-    """
-    Z3 -- output of forward propagation (output of the last LINEAR unit), of shape (2, number of examples)
-    Y -- "true" labels vector placeholder, same shape as Z3
-    Returns:
-    cost - Tensor of the cost function
-    """
     # to fit the tensorflow requirement for tf.nn.softmax_cross_entropy_with_logits(...,...)
     logits = tf.transpose(Z3)
     labels = tf.transpose(Y)
@@ -112,18 +72,6 @@ def compute_cost(Z3, Y):
 
 #random_mini_batches
 def random_mini_batches(X, Y, mini_batch_size = 32):
-    """
-    Creates a list of random minibatches from (X, Y)
-    Arguments:
-    X -- input data, of shape (input size, number of examples)[4,4]
-    Y -- true "label" vector (containing 1 if cat, 0 if non-cat), of shape (1, number of examples)[1,4]
-    mini_batch_size - size of the mini-batches, integer
-    seed -- this is only for the purpose of grading, so that you're "random minibatches are the same as ours.
-    
-    Returns:
-    mini_batches -- list of synchronous (mini_batch_X, mini_batch_Y)
-    """
-    
     m = X.shape[1]                  # number of training examples
     mini_batches = []
     #np.random.seed(seed)
@@ -153,21 +101,6 @@ def random_mini_batches(X, Y, mini_batch_size = 32):
 #model
 def model(X_train, Y_train, X_test, Y_test, learning_rate_base = 0.01,
           num_epochs = 2000, minibatch_size = 16, regularaztion_rate = 0.0001, model_save_path_name = "./model", print_cost = True):
-    """
-    Implements a three-layer tensorflow neural network: LINEAR->RELU->LINEAR->RELU->LINEAR->SOFTMAX.
-    Arguments:
-    X_train -- training set, of shape (input size = 4, number of training examples = 4)
-    Y_train -- test set, of shape (output size = 1, number of training examples = 4)
-    X_test -- training set, of shape (input size = 4, number of training examples = 4)
-    Y_test -- test set, of shape (output size = 1, number of test examples = 4)
-    learning_rate -- learning rate of the optimization
-    num_epochs -- number of epochs of the optimization loop
-    minibatch_size -- size of a minibatch
-    print_cost -- True to print the cost every 10 epochs
-    
-    Returns:
-    parameters -- parameters learnt by the model. They can then be used to predict.
-    """
     ops.reset_default_graph()                         # to be able to rerun the model without overwriting tf variables
     #tf.set_random_seed(1)                             # to keep consistent results
     #seed = 3                                          # to keep consistent results
