@@ -13,14 +13,17 @@ matplotlib (>=2.1.1)
 Whole-genome methylation data, such as methylation beta value from Illumina’s Infinium HumanMethylation450 BeadChip. The format is as follow.
 ![image](https://github.com/BiaoLiu2017/Cancer-methylation/blob/master/images/input_matrix.png)
 
-# standardization
+# Process & predict
+
+## Get CpG markers matrix
+
+## Get promoter markers matrix
+
+## Standardization
 python standard.py
 
-# training
-python train.py
-
-# predicting
+## Predict
 python predict.py
 
 # Reference
-BiaoLiu, et al. (2018) Methylation predicts cancer by deep learning.
+BiaoLiu, et al. (2018) Mining DNA methylation markers for cancer prediction by machine learning.
