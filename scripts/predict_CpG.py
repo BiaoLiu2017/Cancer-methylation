@@ -59,7 +59,7 @@ Z3 = forward_propagation(X, parameters, is_training)
 correct_prediction = tf.equal(tf.to_float(tf.sigmoid(Z3) >= 0.5), Y)
 #accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.1)
 config=tf.ConfigProto(gpu_options=gpu_options)
 sess = tf.Session(config=config)
@@ -71,8 +71,7 @@ X_test = X_test_org.transpose()
 #Y_test = Y_test_org.reshape(1,163)
 
 saver1 = tf.train.Saver()
-#'path' should be changed to real path
-saver1.restore(sess, '/path/model_0.5-3740')
+saver1.restore(sess, '../models/model_0.5-3740')
 
 f1 = open(sys.argv[2], 'a')#sigmoid
 f2 = open(sys.argv[3], 'a')#0/1
