@@ -11,7 +11,7 @@ matplotlib (>=2.1.1)
 
 # Data
 Whole-genome methylation data, such as methylation beta value from Illumina’s Infinium HumanMethylation450 BeadChip. The format is as follow.
-![image](.jpg)
+![image](https://github.com/BiaoLiu2017/Cancer-methylation/blob/master/images/input_matrix.png)
 
 # standardization
 python standard.py
