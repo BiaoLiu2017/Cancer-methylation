@@ -21,14 +21,18 @@ Each column is a sample, and each row is a marker(cg id should be sorted from sm
 python get_CpG_matrix.py input.txt CpG_matrix.txt
 
 ## 2)Get promoter markers matrix
-python get_promoter_matrix.py input.txt promoter_matrix.txt
+python trans_array.py input.txt input_trans.txt
+
+python get_promoter_matrix.py input_trans.txt promoter_matrix.txt
 
 ## 3)Standardization
 python standard_CpG.py CpG_matrix.txt CpG_matrix_standard.txt
-python standard_promoter.py promoter_matrix_standard.txt
+
+python standard_promoter.py promoter_matrix.txt promoter_matrix_standard.txt
 
 ## 4)Predict
 python predict_CpG.py CpG_matrix_standard.txt
+
 python predict_promoter.py promoter_matrix_standard.txt
 
 # Reference
