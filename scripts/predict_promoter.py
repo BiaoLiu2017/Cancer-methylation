@@ -71,7 +71,8 @@ X_test = X_test_org.transpose()
 #Y_test = Y_test_org.reshape(1,169)
 
 saver1 = tf.train.Saver()
-saver1.restore(sess, '/cloud/liubiao/methylation_project/TCGA_GEO_data/lb_restart/final_13_marker_promoter/All_sample/final_result/logs_and_models/train_promoter_2/model_0.5-3970')
+#'path' should be changed to real path
+saver1.restore(sess, '/path/model_0.5-3970')
 
 f1 = open(sys.argv[2], 'a')
 f2 = open(sys.argv[3], 'a')
