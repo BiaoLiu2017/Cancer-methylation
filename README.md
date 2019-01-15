@@ -17,6 +17,8 @@ Each column is a sample, and each row is a marker(cg id should be sorted from sm
 
 # Process & predict
 
+The documents in 'file' directory is the results of GSE108462 (prostate cancer cfDNA).
+
 ## 1)Get CpG markers matrix
 python get_CpG_matrix.py input.txt CpG_matrix.txt
 
