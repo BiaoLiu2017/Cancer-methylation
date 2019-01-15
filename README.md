@@ -12,18 +12,23 @@ matplotlib (>=2.1.1)
 # Data
 Whole-genome methylation data, such as methylation beta value from Illumina’s Infinium HumanMethylation450 BeadChip. The format is as follow.
 ![image](https://github.com/BiaoLiu2017/Cancer-methylation/blob/master/images/input_matrix.png)
+Each column is a sample, and each row is a marker. If there is just only one sample, the file will have only two column. It is fine.
 
 # Process & predict
 
-## Get CpG markers matrix
+## 1)Get CpG markers matrix
+python get_CpG_matrix.py
 
-## Get promoter markers matrix
+## 2)Get promoter markers matrix
+python get_promoter_matrix.py
 
-## Standardization
-python standard.py
+## 3)Standardization
+python standard_CpG.py
+python standard_promoter.py
 
-## Predict
-python predict.py
+## 4)Predict
+python predict_CpG.py
+python predict_promoter.py
 
 # Reference
 BiaoLiu, et al. (2018) Mining DNA methylation markers for cancer prediction by machine learning.
