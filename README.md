@@ -14,22 +14,23 @@ Whole-genome methylation data, such as methylation beta value from Illumina’s 
 ![image](https://github.com/BiaoLiu2017/Cancer-methylation/blob/master/images/input_matrix.png)
 
 Each column is a sample, and each row is a marker. If there is just only one sample, the file will have only two column. It is fine.
+The file should be renamed as 'input.txt'.
 
 # Process & predict
 
 ## 1)Get CpG markers matrix
-python get_CpG_matrix.py
+python get_CpG_matrix.py input.txt CpG_matrix.txt
 
 ## 2)Get promoter markers matrix
-python get_promoter_matrix.py
+python get_promoter_matrix.py input.txt promoter_matrix.txt
 
 ## 3)Standardization
-python standard_CpG.py
-python standard_promoter.py
+python standard_CpG.py CpG_matrix.txt CpG_matrix_standard.txt
+python standard_promoter.py promoter_matrix_standard.txt
 
 ## 4)Predict
-python predict_CpG.py
-python predict_promoter.py
+python predict_CpG.py CpG_matrix_standard.txt
+python predict_promoter.py promoter_matrix_standard.txt
 
 # Reference
 BiaoLiu, et al. (2018) Mining DNA methylation markers for cancer prediction by machine learning.
