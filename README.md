@@ -12,6 +12,7 @@ matplotlib (>=2.1.1)
 # Data
 Whole-genome methylation data, such as methylation beta value from Illumina’s Infinium HumanMethylation450 BeadChip. The format is as follow.
 ![image](https://github.com/BiaoLiu2017/Cancer-methylation/blob/master/images/input_matrix.png)
+
 Each column is a sample, and each row is a marker. If there is just only one sample, the file will have only two column. It is fine.
 
 # Process & predict
