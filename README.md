@@ -4,9 +4,13 @@ In the field of cancer diagnose, lots of DNA methylation markers used to predict
 
 # prerequisites
 Python (3.6). Python 3.6.4 is recommended.
+
 Numpy (>=1.14.2)
+
 tensorflow-gpu (>=1.4.0)
+
 Scikit-learn (>=0.19.1)
+
 matplotlib (>=2.1.1)
 
 # Data
