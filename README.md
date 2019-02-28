@@ -46,4 +46,4 @@ python predict_CpG.py CpG_matrix_standard.txt sigmoid_CpG.txt predict_CpG.txt
 python predict_promoter.py promoter_matrix_standard.txt sigmoid_promoter.txt predict_promoter.txt
 
 # Reference
-BiaoLiu, et al. (2018) Mining DNA methylation markers for cancer prediction by machine learning.
+BiaoLiu, et al. (2018) DNA methylation markers for pan-cancer prediction by deep learning.
