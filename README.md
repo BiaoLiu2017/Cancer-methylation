@@ -45,8 +45,8 @@ python predict_promoter.py promoter_matrix_standard.txt sigmoid_promoter.txt pre
 # 5.Additional predict results
 |Tissue types|Status|GEO accession|Samples size|Accuracy|
 | :----------: | :-----------:| :-----------:| :-----------:| :-----------:|
-| lung   | COPD   | GSE63704   | 32|    |
-|   |   |   |  |   |
+| lung   | COPD   | GSE63704   | 32|1|
+|intestine|Normal|E-MTAB-4957|134|1|
 
 # Reference
 BiaoLiu, et al. (2018) DNA methylation markers for pan-cancer prediction by deep learning.
