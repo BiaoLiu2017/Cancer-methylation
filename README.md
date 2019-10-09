@@ -49,4 +49,4 @@ python predict_promoter.py promoter_matrix_standard.txt sigmoid_promoter.txt pre
 |intestine|Normal|E-MTAB-4957|134|100%|
 
 # Reference
-BiaoLiu, et al. (2018) DNA methylation markers for pan-cancer prediction by deep learning.
+Liu B, Liu Y, Pan X, et al. DNA Methylation Markers for Pan-Cancer Prediction by Deep Learning[J]. Genes, 2019, 10(10): 778.
