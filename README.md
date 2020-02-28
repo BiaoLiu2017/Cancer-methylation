@@ -28,9 +28,7 @@ The documents in 'files' directory is the results of GSE108462 (prostate cancer 
 python get_CpG_matrix.py input.txt CpG_matrix.txt
 
 ## 2)Get promoter markers matrix
-python trans_array.py input.txt input_trans.txt
-
-python get_promoter_matrix.py input_trans.txt promoter_matrix.txt
+promoter_matrix.txt
 
 ## 3)Standardization
 python standard_CpG.py CpG_matrix.txt CpG_matrix_standard.txt
